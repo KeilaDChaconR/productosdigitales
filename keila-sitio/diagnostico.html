@@ -5,228 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diagnóstico Exprés Gratuito — Keila Chacón</title>
 <style>
-  :root{
-    --navy:#1F2A44;
-    --navy-soft:#33415F;
-    --gold:#8A6D3B;
-    --gold-light:#C7A96B;
-    --cream:#FAF7F1;
-    --card:#FFFFFF;
-    --text:#2B2B28;
-    --text-muted:#6B6B63;
-    --border:#E4DFD3;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
   *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--cream);
-    font-family:Georgia,'Times New Roman',serif;
-    color:var(--text);
-    padding:48px 20px;
-    display:flex;
-    justify-content:center;
-  }
+  body{margin:0;font-family:'Nunito',system-ui,sans-serif;background:#FAF7F1;color:#2B2B28;padding:56px 20px;display:flex;justify-content:center;}
+  ::placeholder{color:#a39c8e;}
   .wrap{width:100%;max-width:620px;}
-  .eyebrow{
-    text-align:center;
-    letter-spacing:.14em;
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:12px;
-    color:var(--gold);
-    font-weight:600;
-    text-transform:uppercase;
-    margin-bottom:10px;
-  }
-  h1{
-    text-align:center;
-    font-size:32px;
-    color:var(--navy);
-    margin:0 0 12px;
-    line-height:1.25;
-  }
-  .sub{
-    text-align:center;
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:15px;
-    color:var(--text-muted);
-    max-width:460px;
-    margin:0 auto 34px;
-    line-height:1.55;
-  }
-  .card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:36px 32px;
-  }
-  .field{margin-bottom:22px;}
-  label{
-    display:block;
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:13px;
-    font-weight:600;
-    color:var(--navy);
-    margin-bottom:7px;
-  }
-  label .opt{
-    font-weight:400;
-    color:var(--text-muted);
-    text-transform:none;
-    letter-spacing:0;
-  }
-  input[type=text],input[type=tel],input[type=email],select,textarea{
-    width:100%;
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:15px;
-    color:var(--text);
-    padding:10px 2px;
-    border:none;
-    border-bottom:1.5px solid var(--border);
-    background:transparent;
-    outline:none;
-    transition:border-color .15s ease;
-  }
-  textarea{resize:vertical;min-height:64px;font-family:'Segoe UI',system-ui,sans-serif;}
-  input:focus,select:focus,textarea:focus{border-bottom-color:var(--gold);}
-  select{appearance:none;background:transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="%238A6D3B"><path d="M2 4l5 6 5-6z"/></svg>') no-repeat right 4px center;}
-  .pills{display:flex;flex-wrap:wrap;gap:8px;}
-  .pill{
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:13px;
-    padding:8px 14px;
-    border:1.3px solid var(--border);
-    border-radius:20px;
-    color:var(--navy-soft);
-    cursor:pointer;
-    user-select:none;
-    transition:all .15s ease;
-  }
-  .pill.on{
-    background:var(--navy);
-    border-color:var(--navy);
-    color:#fff;
-  }
-  .err{
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:12px;
-    color:#A23B2E;
-    margin-top:6px;
-    display:none;
-  }
-  .actions{margin-top:30px;}
-  button{
-    width:100%;
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:15px;
-    font-weight:600;
-    letter-spacing:.02em;
-    padding:14px 20px;
-    border-radius:4px;
-    cursor:pointer;
-    border:none;
-    transition:opacity .15s ease;
-  }
-  button:hover{opacity:.9;}
-  .btn-primary{
-    background:var(--navy);
-    color:#fff;
-    margin-bottom:12px;
-  }
-  .btn-secondary{
-    background:transparent;
-    color:var(--navy);
-    border:1.3px solid var(--navy);
-  }
-  .confirm{
-    display:none;
-    text-align:center;
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:14px;
-    color:var(--navy);
-    background:#F2EEE4;
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:16px;
-    margin-top:18px;
-    line-height:1.5;
-  }
-  .footer{
-    text-align:center;
-    font-family:'Segoe UI',system-ui,sans-serif;
-    font-size:12.5px;
-    color:var(--text-muted);
-    margin-top:26px;
-  }
-  .footer strong{color:var(--navy);}
+  .back{display:inline-block;font-size:13px;color:#1F2A44;font-weight:600;margin-bottom:18px;text-decoration:none;}
+  .badge-row{display:flex;justify-content:center;margin-bottom:18px;}
+  .badge{font-size:11.5px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#1B4D3E;background:#E3ECE8;border-radius:999px;padding:7px 16px;}
+  h1{text-align:center;font-size:30px;font-weight:900;line-height:1.2;margin:0 0 8px;color:#1F2A44;}
+  .sub{text-align:center;font-size:14.5px;line-height:1.6;color:#6B6B63;max-width:440px;margin:0 auto 28px;}
+  .progress-row{display:flex;align-items:center;gap:10px;margin-bottom:24px;}
+  .progress-track{flex:1;height:6px;background:#E4DFD3;border-radius:999px;overflow:hidden;}
+  .progress-fill{height:100%;background:#1B4D3E;border-radius:999px;transition:width .25s ease;}
+  .progress-label{font-size:12px;font-weight:700;color:#6B6B63;white-space:nowrap;}
+  .card{background:#fff;border-radius:14px;padding:36px 32px;box-shadow:0 10px 32px rgba(31,42,68,0.08);}
+  .step-num{font-size:44px;font-weight:900;color:#E3ECE8;line-height:1;margin-bottom:2px;}
+  .step-title{margin:0 0 6px;font-size:21px;font-weight:800;color:#1F2A44;}
+  .step-desc{margin:0 0 22px;font-size:13.5px;color:#6B6B63;}
+  .field{margin-bottom:18px;}
+  label{display:block;font-size:13px;font-weight:700;margin-bottom:7px;}
+  label .opt{font-weight:400;color:#a39c8e;}
+  input,select,textarea{width:100%;font-family:inherit;font-size:16px;padding:13px 14px;border-radius:8px;border:1.5px solid #E4DFD3;background:#FAF7F1;outline:none;}
+  textarea{min-height:70px;resize:vertical;}
+  .err{font-size:12px;color:#A23B2E;margin-top:6px;display:none;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:480px){.two-col{grid-template-columns:1fr;}}
+  .chip{font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;user-select:none;border:1.5px solid #E4DFD3;background:transparent;color:#4a4844;transition:all .15s ease;display:inline-block;}
+  .chip.on{border-color:#1F2A44;background:#1F2A44;color:#fff;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .group{margin-bottom:16px;}
+  .group-title{font-size:11.5px;font-weight:800;color:#1B4D3E;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;}
+  .actions{display:flex;gap:12px;margin-top:28px;}
+  button{font-family:inherit;cursor:pointer;border:none;}
+  .btn-back{flex:0 0 auto;font-size:15px;font-weight:800;padding:15px 22px;border-radius:8px;border:1.5px solid #E4DFD3;background:transparent;color:#6B6B63;}
+  .btn-primary{flex:1;font-size:15px;font-weight:800;padding:15px 20px;border-radius:8px;background:#1F2A44;color:#fff;}
+  .btn-primary:disabled{opacity:.7;}
+  .btn-email{width:100%;font-size:14px;font-weight:700;padding:13px 20px;border-radius:8px;background:transparent;color:#1B4D3E;margin-top:10px;}
+  .confirm{display:none;text-align:center;font-size:14px;color:#1F2A44;background:#E3ECE8;border-radius:10px;padding:16px;margin-top:18px;line-height:1.55;}
+  .footer{text-align:center;font-size:12.5px;color:#6B6B63;margin-top:24px;}
+  .footer strong{color:#1F2A44;}
+  .step{display:none;}
+  .step.active{display:block;}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <a href="index.html" style="display:inline-block;font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;color:#1F2A44;font-weight:600;margin-bottom:18px;text-decoration:none;">&larr; Volver al portafolio</a>
-  <div class="eyebrow">Keila Chacón · Diseño Web &amp; Presencia Digital</div>
+  <a href="index.html" class="back">&larr; Volver al portafolio</a>
+  <div class="badge-row"><span class="badge">Diagnóstico gratuito · Cupo limitado esta semana</span></div>
   <h1>¿Tu negocio pierde clientes<br>sin que lo sepas?</h1>
-  <p class="sub">Rellena esto en un minuto. Reviso gratis tu web, tu ficha de Google y cómo gestionas reservas o pedidos, y te digo exactamente qué mejorar — sin compromiso.</p>
+  <p class="sub">3 pasos, un minuto. Reviso tu web, tu ficha de Google y tus reservas o pedidos, y te digo qué mejorar — sin compromiso.</p>
+
+  <div class="progress-row">
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:33%;"></div></div>
+    <span class="progress-label" id="progressLabel">Paso 1 de 3</span>
+  </div>
 
   <div class="card">
-    <form id="diagForm">
+
+    <div class="step active" id="step0">
+      <div class="step-num">01</div>
+      <h2 class="step-title">Cuéntame de tu negocio</h2>
+      <p class="step-desc">Así sé por dónde empezar.</p>
       <div class="field">
         <label for="negocio">Nombre del negocio</label>
-        <input type="text" id="negocio" placeholder="Ej. Restaurante El Rincón" required>
+        <input type="text" id="negocio" placeholder="Ej. Restaurante El Rincón">
         <div class="err" id="err-negocio">Escribe el nombre del negocio.</div>
       </div>
-
       <div class="field">
-        <label for="tipo">Tipo de negocio</label>
-        <select id="tipo" required>
-          <option value="" disabled selected>Selecciona una opción</option>
-          <option>Restaurante o bar</option>
-          <option>Tienda de ropa o accesorios</option>
-          <option>Otro comercio local</option>
-        </select>
+        <label>Tipo de negocio</label>
+        <div class="chip-row" id="tipoRow">
+          <div class="chip" data-tipo="Restaurante o bar">Restaurante o bar</div>
+          <div class="chip" data-tipo="Tienda de ropa o accesorios">Tienda de ropa o accesorios</div>
+          <div class="chip" data-tipo="Otro comercio local">Otro comercio local</div>
+        </div>
         <div class="err" id="err-tipo">Selecciona el tipo de negocio.</div>
       </div>
+    </div>
 
-      <div class="field">
-        <label for="contacto">Persona de contacto</label>
-        <input type="text" id="contacto" placeholder="Tu nombre" required>
-        <div class="err" id="err-contacto">Escribe tu nombre.</div>
+    <div class="step" id="step1">
+      <div class="step-num">02</div>
+      <h2 class="step-title">¿Cómo te contacto?</h2>
+      <p class="step-desc">Para enviarte el diagnóstico directamente.</p>
+      <div class="two-col field">
+        <div>
+          <label for="contacto">Tu nombre</label>
+          <input type="text" id="contacto" placeholder="Tu nombre">
+          <div class="err" id="err-contacto">Escribe tu nombre.</div>
+        </div>
+        <div>
+          <label for="telefono">WhatsApp</label>
+          <input type="tel" id="telefono" placeholder="+34 600 000 000">
+          <div class="err" id="err-telefono">Escribe un teléfono.</div>
+        </div>
       </div>
-
-      <div class="field">
-        <label for="telefono">Teléfono o WhatsApp</label>
-        <input type="tel" id="telefono" placeholder="+34 600 000 000" required>
-        <div class="err" id="err-telefono">Escribe un teléfono de contacto.</div>
-      </div>
-
       <div class="field">
         <label for="email">Email <span class="opt">(opcional)</span></label>
         <input type="email" id="email" placeholder="nombre@negocio.com">
       </div>
+    </div>
 
-      <div class="field">
-        <label>¿Qué te preocupa más? <span class="opt">(elige una o varias)</span></label>
-        <div class="pills" id="pills">
-          <div class="pill" data-val="Página web">Página web</div>
-          <div class="pill" data-val="Reservas o pedidos">Reservas o pedidos</div>
-          <div class="pill" data-val="Redes sociales">Redes sociales</div>
-          <div class="pill" data-val="Atención al cliente">Atención al cliente</div>
-          <div class="pill" data-val="Ficha de Google">Ficha de Google</div>
-          <div class="pill" data-val="No lo sé, quiero que lo veas tú">No lo sé, quiero que lo veas tú</div>
-        </div>
-      </div>
-
+    <div class="step" id="step2">
+      <div class="step-num">03</div>
+      <h2 class="step-title">¿Qué te preocupa más?</h2>
+      <p class="step-desc">Elige una o varias — así el diagnóstico va directo al grano.</p>
+      <div id="pillGroups"></div>
       <div class="field">
         <label for="notas">Cuéntame algo más <span class="opt">(opcional)</span></label>
         <textarea id="notas" placeholder="Ej. tenemos web pero nadie nos escribe por ahí"></textarea>
       </div>
+    </div>
 
-      <div class="actions">
-        <button type="submit" class="btn-primary">Solicitar diagnóstico gratuito</button>
-        <button type="button" class="btn-secondary" id="waBtn">Prefiero escribir por WhatsApp</button>
-      </div>
+    <div class="actions" id="actionsRow">
+      <button type="button" class="btn-back" id="backBtn" style="display:none;">Atrás</button>
+      <button type="button" class="btn-primary" id="nextBtn">Siguiente</button>
+    </div>
+    <button type="button" class="btn-email" id="emailBtn" style="display:none;">o prefiero por correo &rarr;</button>
 
-      <div class="confirm" id="confirm"></div>
-    </form>
+    <div class="confirm" id="confirm"></div>
   </div>
 
   <p class="footer">Te responde <strong>Keila Chacón</strong> · keilachaconhs@gmail.com</p>
@@ -235,45 +131,91 @@
 <script>
   const EMAIL = "keilachaconhs@gmail.com";
   const WHATSAPP_NUMBER = "573162710959";
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzepylpr";
 
-  const pills = document.querySelectorAll(".pill");
-  pills.forEach(p => {
-    p.addEventListener("click", () => p.classList.toggle("on"));
+  const PILL_GROUPS = [
+    { title: "Ficha de Google", items: ["No aparece bien al buscarlo", "Fotos u horario desactualizados", "Reseñas negativas sin responder"] },
+    { title: "Web", items: ["Lenta o mal vista desde el móvil", "Sin botón claro de contacto/reserva", "Menú o catálogo desactualizado"] },
+    { title: "Reservas / pedidos", items: ["Solo por WhatsApp manual", "Llamadas perdidas en hora punta", "No-shows sin control"] },
+    { title: "Instagram / redes", items: ["Sin precio visible en las publicaciones", "Fotos de producto de baja calidad", "Publican con poca regularidad"] },
+    { title: "Otro", items: ["No lo sé, quiero que lo veas tú"] }
+  ];
+
+  let step = 0;
+  let tipo = "";
+  const preocupaciones = new Set();
+
+  const pillGroupsEl = document.getElementById("pillGroups");
+  PILL_GROUPS.forEach(function(g){
+    const groupDiv = document.createElement("div");
+    groupDiv.className = "group";
+    const titleDiv = document.createElement("div");
+    titleDiv.className = "group-title";
+    titleDiv.textContent = g.title;
+    groupDiv.appendChild(titleDiv);
+    const rowDiv = document.createElement("div");
+    rowDiv.className = "chip-row";
+    g.items.forEach(function(label){
+      const chip = document.createElement("div");
+      chip.className = "chip";
+      chip.textContent = label;
+      chip.dataset.val = label;
+      chip.addEventListener("click", function(){
+        chip.classList.toggle("on");
+        if(preocupaciones.has(label)) preocupaciones.delete(label);
+        else preocupaciones.add(label);
+      });
+      rowDiv.appendChild(chip);
+    });
+    groupDiv.appendChild(rowDiv);
+    pillGroupsEl.appendChild(groupDiv);
   });
 
-  function getSelectedPreocupaciones(){
-    return Array.from(document.querySelectorAll(".pill.on")).map(p => p.dataset.val);
+  document.querySelectorAll("#tipoRow .chip").forEach(function(chip){
+    chip.addEventListener("click", function(){
+      tipo = chip.dataset.tipo;
+      document.querySelectorAll("#tipoRow .chip").forEach(function(c){ c.classList.remove("on"); });
+      chip.classList.add("on");
+      document.getElementById("err-tipo").style.display = "none";
+    });
+  });
+
+  function showStep(n){
+    document.querySelectorAll(".step").forEach(function(el, i){
+      el.classList.toggle("active", i === n);
+    });
+    document.getElementById("progressFill").style.width = Math.round(((n + 1) / 3) * 100) + "%";
+    document.getElementById("progressLabel").textContent = "Paso " + (n + 1) + " de 3";
+    document.getElementById("backBtn").style.display = n > 0 ? "block" : "none";
+    document.getElementById("emailBtn").style.display = n === 2 ? "block" : "none";
+    document.getElementById("nextBtn").style.display = "block";
+    document.getElementById("nextBtn").textContent = n === 2 ? "Solicitar diagnóstico por WhatsApp" : "Siguiente";
   }
 
-  function validate(){
+  function validateStep(n){
     let ok = true;
-    const negocio = document.getElementById("negocio");
-    const tipo = document.getElementById("tipo");
-    const contacto = document.getElementById("contacto");
-    const telefono = document.getElementById("telefono");
-
-    document.getElementById("err-negocio").style.display = "none";
-    document.getElementById("err-tipo").style.display = "none";
-    document.getElementById("err-contacto").style.display = "none";
-    document.getElementById("err-telefono").style.display = "none";
-
-    if(!negocio.value.trim()){ document.getElementById("err-negocio").style.display = "block"; ok = false; }
-    if(!tipo.value){ document.getElementById("err-tipo").style.display = "block"; ok = false; }
-    if(!contacto.value.trim()){ document.getElementById("err-contacto").style.display = "block"; ok = false; }
-    if(!telefono.value.trim()){ document.getElementById("err-telefono").style.display = "block"; ok = false; }
-
+    if(n === 0){
+      const negocio = document.getElementById("negocio").value.trim();
+      document.getElementById("err-negocio").style.display = negocio ? "none" : "block";
+      document.getElementById("err-tipo").style.display = tipo ? "none" : "block";
+      if(!negocio || !tipo) ok = false;
+    }
+    if(n === 1){
+      const contacto = document.getElementById("contacto").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      document.getElementById("err-contacto").style.display = contacto ? "none" : "block";
+      document.getElementById("err-telefono").style.display = telefono ? "none" : "block";
+      if(!contacto || !telefono) ok = false;
+    }
     return ok;
   }
 
   function buildSummary(){
     const negocio = document.getElementById("negocio").value.trim();
-    const tipo = document.getElementById("tipo").value;
     const contacto = document.getElementById("contacto").value.trim();
     const telefono = document.getElementById("telefono").value.trim();
     const email = document.getElementById("email").value.trim();
     const notas = document.getElementById("notas").value.trim();
-    const preocupaciones = getSelectedPreocupaciones();
-
     let lines = [];
     lines.push("Solicitud de diagnóstico exprés");
     lines.push("Negocio: " + negocio);
@@ -281,64 +223,64 @@
     lines.push("Contacto: " + contacto);
     lines.push("Teléfono: " + telefono);
     if(email) lines.push("Email: " + email);
-    if(preocupaciones.length) lines.push("Le preocupa: " + preocupaciones.join(", "));
+    if(preocupaciones.size) lines.push("Le preocupa: " + Array.from(preocupaciones).join(", "));
     if(notas) lines.push("Notas: " + notas);
     return lines.join("\n");
   }
 
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzepylpr";
-
-  document.getElementById("diagForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    if(!validate()) return;
-
-    const submitBtn = document.querySelector(".btn-primary");
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Enviando...";
-
-    const confirm = document.getElementById("confirm");
-
+  function sendToFormspree(){
     const payload = {
       negocio: document.getElementById("negocio").value.trim(),
-      tipo: document.getElementById("tipo").value,
+      tipo: tipo,
       contacto: document.getElementById("contacto").value.trim(),
       telefono: document.getElementById("telefono").value.trim(),
       email: document.getElementById("email").value.trim(),
-      preocupaciones: getSelectedPreocupaciones().join(", "),
+      preocupaciones: Array.from(preocupaciones).join(", "),
       notas: document.getElementById("notas").value.trim(),
       resumen: buildSummary()
     };
-
     fetch(FORMSPREE_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify(payload)
-    })
-    .then(function(res){
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Solicitar diagnóstico gratuito";
-      confirm.style.display = "block";
-      if(res.ok){
-        document.getElementById("diagForm").reset();
-        pills.forEach(p => p.classList.remove("on"));
-        confirm.textContent = "¡Listo! Tu solicitud fue enviada. Keila te contactará muy pronto.";
-      } else {
-        confirm.textContent = "Hubo un problema al enviar. Puedes escribirnos directo a " + EMAIL + " o por WhatsApp.";
-      }
-    })
-    .catch(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Solicitar diagnóstico gratuito";
-      confirm.style.display = "block";
-      confirm.textContent = "Hubo un problema de conexión. Puedes escribirnos directo a " + EMAIL + " o por WhatsApp.";
-    });
+    }).catch(function(){});
+  }
+
+  function showConfirm(text){
+    document.getElementById("actionsRow").style.display = "none";
+    document.getElementById("emailBtn").style.display = "none";
+    const confirm = document.getElementById("confirm");
+    confirm.style.display = "block";
+    confirm.textContent = text;
+  }
+
+  document.getElementById("nextBtn").addEventListener("click", function(){
+    if(step < 2){
+      if(!validateStep(step)) return;
+      step++;
+      showStep(step);
+      return;
+    }
+    sendToFormspree();
+    const text = encodeURIComponent(buildSummary());
+    window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text, "_blank");
+    showConfirm("Perfecto, se abrió WhatsApp con tu solicitud lista para enviar.");
   });
 
-  document.getElementById("waBtn").addEventListener("click", function(){
-    const summary = buildSummary();
-    const text = encodeURIComponent(summary);
-    window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text, "_blank");
+  document.getElementById("backBtn").addEventListener("click", function(){
+    step = Math.max(step - 1, 0);
+    showStep(step);
   });
+
+  document.getElementById("emailBtn").addEventListener("click", function(){
+    sendToFormspree();
+    const subject = encodeURIComponent("Solicitud de diagnóstico exprés — " + document.getElementById("negocio").value.trim());
+    const body = encodeURIComponent(buildSummary());
+    window.location.href = "mailto:" + EMAIL + "?subject=" + subject + "&body=" + body;
+    showConfirm("Perfecto, se está abriendo tu correo con los datos listos para enviar. Si no se abre nada, escríbenos directo a " + EMAIL + ".");
+  });
+
+  showStep(0);
 </script>
 </body>
 </html>
